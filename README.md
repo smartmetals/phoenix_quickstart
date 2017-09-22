@@ -18,7 +18,7 @@ Note that your app name must start with a letter and have only lowercase letters
 
 Answer yes to the questions about installing dependencies.
 
-Open `projects/myappname/config/dev.exs` and change the db `:hostname` to "db"
+Open `projects/myappname/config/dev.exs` and change the db `hostname:`  from localhost to "db".
 
 Note below commands use the sourced function `dmix`, not `mix` directly.
 
@@ -27,7 +27,7 @@ dmix ecto.create
 dserver # docker-compose up
 ```
 
-Browse: https://localhost:4000
+Browse: http://localhost:4000
 
 
 If you start a new shell, `source functions.sh` again and run phx-init `myappname`.
