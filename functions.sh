@@ -2,9 +2,9 @@
 
 phx-new() {
     phx-init $1
-    mkdir -p $PROJECTS
+    mkdir -p "$PWD/projects/$1"
     check-image $PWD
-    docker run -it --rm -v $PROJECTS -w /projects phoenix13 mix phx.new $1
+    docker-compose run web mix phx.new $1
 }
 
 check-image() {
@@ -15,16 +15,18 @@ check-image() {
 }
 
 phx-init() {
-    export PROJECTS="$PWD:/projects"
+    export PROJECTS="$PWD/projects:/projects"
     export PHOENIX13_PROJECT="$1"
 }
 
 drun() {
-    docker run -it --rm -v $PROJECTS -w "/projects/$PHOENIX13_PROJECT" phoenix13 "$@"
+    docker-compose run web "$@"
 }
 
 dmix () {
-    docker run -it --rm -v $PROJECTS -w "/projects/$PHOENIX13_PROJECT" phoenix13 mix "$@"
+    docker-compose run web mix "$@"
 }
 
-
+dserver () {
+    docker-compose up
+}
