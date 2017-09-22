@@ -3,7 +3,7 @@ services:
   db:
     image: postgres
   web:
-    image: phoenix13
+    build: . 
     command: mix phx.server
     volumes:
       - ./projects:/projects
