@@ -2,6 +2,8 @@
 
 A docker compose setup with Phoenix 1.3, Elixir 1.5, Erlang 20.0.
 
+Install Docker: https://www.docker.com/get-docker
+
 ##
 Initial setup:
 
@@ -27,6 +29,8 @@ Browse: https://localhost:4000
 
 
 If you start a new shell, `source functions.sh` again and run phx-init `myappname`.
+
+Start a repl with `diex`. Run any command in the web container with `drun`.
 
 ## Credit
 Most of the work in this repo was originally done by others:
