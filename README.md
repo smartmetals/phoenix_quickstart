@@ -14,6 +14,8 @@ source functions.sh
 phx-new myappname
 ```
 
+Note that your app name must start with a letter and have only lowercase letters, numbers and underscore.
+
 Answer yes to the questions about installing dependencies.
 
 Open `projects/myappname/config/dev.exs` and change the db `:hostname` to "db"
