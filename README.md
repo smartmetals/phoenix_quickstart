@@ -19,6 +19,7 @@ Note that your app name must start with a letter and have only lowercase letters
 Answer yes to the questions about installing dependencies.
 
 Open `projects/myappname/config/dev.exs` and change the db `hostname:`  from localhost to "db".
+Do the same in `projects/myappname/config/test.exs`.
 
 Note below commands use the sourced function `dmix`, not `mix` directly.
 
