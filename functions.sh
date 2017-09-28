@@ -12,17 +12,33 @@ phx-init() {
 }
 
 drun() {
+    if [[ -z ${PHOENIX13_PROJECT+x} ]]; then
+        echo "PHOENIX13_PROJECT is unset. Please run phx-init <appname>"
+        return
+    fi
     docker-compose run web "$@"
 }
 
 dmix () {
+    if [[ -z ${PHOENIX13_PROJECT+x} ]]; then
+        echo "PHOENIX13_PROJECT is unset. Please run phx-init <appname>"
+        return
+    fi
     docker-compose run web mix "$@"
 }
 
 diex () {
+    if [[ -z ${PHOENIX13_PROJECT+x} ]]; then
+        echo "PHOENIX13_PROJECT is unset. Please run phx-init <appname>"
+        return
+    fi
     docker-compose run web iex -S mix
 }
 
 dserver () {
+    if [[ -z ${PHOENIX13_PROJECT+x} ]]; then
+        echo "PHOENIX13_PROJECT is unset. Please run phx-init <appname>"
+        return
+    fi
     docker-compose up
 }
